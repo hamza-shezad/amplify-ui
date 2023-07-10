@@ -995,6 +995,8 @@ export const ComponentText = {
 
 export const stylePropsToThemeKeys: Record<ThemeStylePropKey, ThemeTokenKey> = {
   backgroundColor: 'colors',
+  borderColor: 'colors',
+  borderWidth: 'borderWidths',
   color: 'colors',
   borderRadius: 'radii',
   fontSize: 'fontSizes',
