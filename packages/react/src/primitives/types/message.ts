@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { BaseFlexProps } from './flex';
+import { BaseButtonProps } from './button';
 import { ElementType, PrimitiveProps } from './view';
 
 export type MessageColorThemes =
@@ -69,7 +70,10 @@ export interface BaseMessageProps extends BaseFlexProps {
 
 export interface BaseMessageTitleProps extends BaseFlexProps {}
 export interface BaseMessageContentProps extends BaseFlexProps {}
-
+export interface BaseMessageDismissProps extends BaseButtonProps {
+  onDismiss?: () => void;
+  hasIcon?: boolean;
+}
 export type MessageProps<Element extends ElementType = 'div'> = PrimitiveProps<
   BaseMessageProps,
   Element
@@ -80,3 +84,6 @@ export type MessageTitleProps<Element extends ElementType = 'div'> =
 
 export type MessageContentProps<Element extends ElementType = 'div'> =
   PrimitiveProps<BaseMessageContentProps, Element>;
+
+export type MessageDismissProps<Element extends ElementType = 'button'> =
+  PrimitiveProps<BaseMessageDismissProps, Element>;

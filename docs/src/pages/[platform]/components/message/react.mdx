@@ -5,7 +5,10 @@ import {
   BasicExample,
   Filled,
   Outline,
-  Composable
+  Composable,
+  WithIcon,
+  MessageWithTitle,
+  WithDismiss
 } from './examples/';
 
 import { Example, ExampleCode } from '@/components/Example';
@@ -17,6 +20,39 @@ import { Example, ExampleCode } from '@/components/Example';
   <BasicExample />
   <ExampleCode>
 ```tsx file=./examples/BasicExample.tsx
+
+````
+  </ExampleCode>
+</Example>
+
+## With icon
+
+<Example>
+  <WithIcon />
+  <ExampleCode>
+```tsx file=./examples/WithIcon.tsx
+
+````
+  </ExampleCode>
+</Example>
+
+## With title
+
+<Example>
+  <MessageWithTitle />
+  <ExampleCode>
+```tsx file=./examples/MessageWithTitle.tsx
+
+````
+  </ExampleCode>
+</Example>
+
+## With dismiss
+
+<Example>
+  <WithDismiss />
+  <ExampleCode>
+```tsx file=./examples/WithDismiss.tsx
 
 ````
   </ExampleCode>

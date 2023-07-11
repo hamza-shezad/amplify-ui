@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { ComponentClassNames } from '../shared/constants';
 import { MessageColorThemes } from '../types';
+import { useMessageContext } from './useMessageContext';
 import {
   IconInfo,
   IconError,
@@ -10,46 +11,26 @@ import {
 } from '../Icon/internal';
 
 interface MessageIconProps {
-  severity?: MessageColorThemes;
-  ariaHidden?: boolean;
+  icon?: MessageColorThemes;
 }
 
 /**
  * @internal For internal Amplify UI use only. May be removed in a future release.
  */
-export const MessageIcon: React.FC<MessageIconProps> = ({
-  severity,
-  ariaHidden,
-}) => {
-  switch (severity) {
+export const MessageIcon: React.FC<MessageIconProps> = ({ icon }) => {
+  const { colorTheme } = useMessageContext();
+
+  // If colorTheme prop is provided to MessageIcon use that (overrideColorTheme)
+  // otherwise, use the colorTheme from context.
+  switch (icon ? icon : colorTheme) {
     case 'info':
-      return (
-        <IconInfo
-          aria-hidden={ariaHidden}
-          className={ComponentClassNames.AlertIcon}
-        />
-      );
+      return <IconInfo className={ComponentClassNames.MessageIcon} />;
     case 'error':
-      return (
-        <IconError
-          aria-hidden={ariaHidden}
-          className={ComponentClassNames.AlertIcon}
-        />
-      );
+      return <IconError className={ComponentClassNames.MessageIcon} />;
     case 'warning':
-      return (
-        <IconWarning
-          aria-hidden={ariaHidden}
-          className={ComponentClassNames.AlertIcon}
-        />
-      );
+      return <IconWarning className={ComponentClassNames.MessageIcon} />;
     case 'success':
-      return (
-        <IconCheckCircle
-          aria-hidden={ariaHidden}
-          className={ComponentClassNames.AlertIcon}
-        />
-      );
+      return <IconCheckCircle className={ComponentClassNames.MessageIcon} />;
     default:
       return null;
   }

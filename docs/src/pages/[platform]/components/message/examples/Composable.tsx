@@ -4,6 +4,7 @@ import {
   Message,
   MessageTitle,
   MessageContent,
+  MessageDismiss,
   Text,
   Button,
   Link,
@@ -22,12 +23,7 @@ export const Composable = () => {
   return (
     <View padding="medium">
       <Flex direction="column" gap="xl">
-        <Message
-          variation="filled"
-          colorTheme="info"
-          hasIcon={false}
-          isDismissible={true}
-        >
+        <Message variation="filled" colorTheme="info">
           <MessageContent>
             <MessageTitle>Your build is ready.</MessageTitle>
             <Flex direction="column" gap="xs">
@@ -102,8 +98,6 @@ export const Composable = () => {
           variation="outline"
           alignSelf="flex-start"
           colorTheme="success"
-          hasIcon={true}
-          isDismissible={true}
         >
           <Flex alignItems="center">
             Your settings were saved.{' '}
@@ -116,37 +110,27 @@ export const Composable = () => {
           No internet connection detected.
         </Message>
         <Message
-          alignSelf="flex-start"
-          alignItems="flex-start"
           colorTheme="error"
-          padding="large"
-          hasIcon={false}
-          boxShadow="0 1px 8px rgba(0,0,0,.15)"
-          borderRadius="medium"
+          variation="plain"
+          role="alertdialog"
+          aria-labelledby="titleID"
+          aria-describedby=""
         >
           <MessageContent>
-            <MessageTitle>
+            <MessageTitle id="titleID">
               Are you sure you want to delete this item?
             </MessageTitle>
-            <Flex direction="column">
-              <Text>Deleted items cannot be recovered.</Text>
-              <Flex justifyContent="flex-end">
-                <Button variation="link" colorTheme="overlay" size="small">
-                  Cancel
-                </Button>
-                <Button variation="primary" colorTheme="error" size="small">
-                  Yes, delete this item.
-                </Button>
-              </Flex>
-            </Flex>
+
+            <Text>Deleted items cannot be recovered.</Text>
           </MessageContent>
+          <Button variation="primary" colorTheme="error" size="small">
+            Yes, delete this item.
+          </Button>
+          <MessageDismiss hasIcon={false} aria-label="">
+            Cancel
+          </MessageDismiss>
         </Message>
-        <Message
-          variation="filled"
-          colorTheme="success"
-          hasIcon={false}
-          isDismissible={true}
-        >
+        <Message variation="filled" colorTheme="success">
           <MessageTitle>All systems are stable.</MessageTitle>
         </Message>
         <Message variation="filled" colorTheme="warning">

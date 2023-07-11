@@ -51,7 +51,7 @@ export const message: Required<MessageTokens<'default'>> = {
   borderStyle: { value: 'solid' },
   borderWidth: { value: '{borderWidths.small.value}' },
   color: { value: '{colors.font.primary.value}' },
-  justifyContent: { value: 'space-between' },
+  justifyContent: { value: 'flex-start' },
   paddingBlock: { value: '{space.small.value}' },
   paddingInline: { value: '{space.medium.value}' },
   lineHeight: { value: '{lineHeights.small.value}' },

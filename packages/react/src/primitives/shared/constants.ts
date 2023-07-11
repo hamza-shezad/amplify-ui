@@ -959,6 +959,9 @@ export const ComponentText = {
   Alert: {
     dismissButtonLabel: 'Dismiss alert',
   },
+  Message: {
+    dismissButtonLabel: 'Dismiss message',
+  },
   Autocomplete: {
     emptyText: 'No options found',
     loadingText: 'Loading options...',
