@@ -2,6 +2,7 @@ import { Fragment } from '@/components/Fragment';
 import { Button, ButtonGroup, Flex, View } from '@aws-amplify/ui-react';
 import { Example, ExampleCode } from '@/components/Example';
 import { ComponentClassTable } from '@/components/ComponentClassTable';
+import { ThemeViewer } from '@/components/Theming/ThemeViewer';
 import StandardHTMLAttributes from '@/components/StandardHTMLAttributes.mdx';
 import { ComponentStyleDisplay } from '@/components/ComponentStyleDisplay';
 import ThemeExample from '@/components/ThemeExample.mdx';
@@ -31,15 +32,13 @@ import { IconButtonExample, ButtonThemeExample, ColorThemes, Matrix } from './ex
 
 <Example>
   <Matrix />
-  
-<ExampleCode>
-
-```tsx file=./examples/Matrix.tsx
-
-```
-
-</ExampleCode>
 </Example>
+
+## ThemeViewer
+
+<ThemeViewer variation="outlined" />
+<ThemeViewer variation="primary" />
+<ThemeViewer variation="link" />
 
 ## Usage
 
